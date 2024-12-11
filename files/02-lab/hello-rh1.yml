@@ -13,7 +13,7 @@
   become: yes
   remote_user: root
   tasks:
-    - name: Uptime host test
+    - name: Install tcpdump
       ansible.builtin.yum: 
         name: tcpdump
         state: present
