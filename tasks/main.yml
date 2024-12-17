@@ -236,7 +236,12 @@
     src: /home/ec2-user/03-lab/rh1-eda-example.tar.xz
     dest: /home/ec2-user/03-lab/
     remote_src: yes
-
+- name: Create file with registry credentials
+  copy:
+    dest: /home/ec2-user/03-lab/registry-credentials.txt
+    content: |
+      lab20_registry_username: "{{ lab20_registry_username }}"
+      lab20_registry_token: "{{ lab20_registry_token }}"
 
 - name: Create a directory if it does not exist
   ansible.builtin.file:
