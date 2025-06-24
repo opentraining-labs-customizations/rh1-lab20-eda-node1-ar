@@ -6,11 +6,11 @@
         host: 0.0.0.0
         port: 5000
   rules:
-    - name: Hello RH1
+    - name: Hello Red Hat
       condition: event.payload.event_name == "Hello"
       action:
         run_playbook:
-          name: hello-rh1.yml
+          name: hello-redhat.yml
 
 
 
