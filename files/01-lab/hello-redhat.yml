@@ -2,4 +2,4 @@
   connection: local
   tasks:
     - debug:
-        msg: "Hello RH1"
+        msg: "Hello Red Hat"
