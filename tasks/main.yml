@@ -112,7 +112,7 @@
     api_url: https://server.example.com/
     api_username: root
     api_password: redhat..123
-    name: rh1-aap-extra-vars-eda
+    name: redhat-aap-extra-vars-eda
     validate_certs: false 
     initialize_with_readme: true
 
@@ -130,7 +130,7 @@
     api_url: https://server.example.com/
     api_username: root
     api_password: redhat..123
-    name: rh1-ansible-eda-vars-zabbix
+    name: redhat-ansible-eda-vars-zabbix
     validate_certs: false
     initialize_with_readme: true
 
@@ -161,8 +161,8 @@
     group: ec2-user
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
-    src: files/01-lab/hello-rh1.yml
-    dest: /home/ec2-user/01-lab/hello-rh1.yml
+    src: files/01-lab/hello-redhat.yml
+    dest: /home/ec2-user/01-lab/hello-redhat.yml
     owner: ec2-user
     group: ec2-user
     mode: '0644'
@@ -193,8 +193,8 @@
     group: ec2-user
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
-    src: files/02-lab/hello-rh1.yml
-    dest: /home/ec2-user/02-lab/hello-rh1.yml
+    src: files/02-lab/hello-redhat.yml
+    dest: /home/ec2-user/02-lab/hello-redhat.yml
     owner: ec2-user
     group: ec2-user
     mode: '0644'
@@ -226,14 +226,14 @@
     group: ec2-user
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
-    src: files/03-lab/rh1-eda-example.tar.xz
+    src: files/03-lab/redhat-eda-example.tar.xz
     dest: /home/ec2-user/03-lab/
     owner: ec2-user
     group: ec2-user
     mode: '0644'
-- name: Extract rh1-eda-example.tar.xz into /home/ec2-user/03-lab/
+- name: Extract redhat-eda-example.tar.xz into /home/ec2-user/03-lab/
   ansible.builtin.unarchive:
-    src: /home/ec2-user/03-lab/rh1-eda-example.tar.xz
+    src: /home/ec2-user/03-lab/redhat-eda-example.tar.xz
     dest: /home/ec2-user/03-lab/
     remote_src: yes
 # remocing this tasks as the cu or RH employee should use their own creds
@@ -270,10 +270,10 @@
 #  ansible.builtin.shell: cd /home/ec2-user/04-lab/ ; git clone git@server.example.com:root/eda-debug.git
 #  become: false
 #- name: Read-write git checkout from github
-#  ansible.builtin.shell: cd /home/ec2-user/03-lab/ ; git clone  git@server.example.com:root/rh1-aap-extra-vars-eda.git
+#  ansible.builtin.shell: cd /home/ec2-user/03-lab/ ; git clone  git@server.example.com:root/redhat-aap-extra-vars-eda.git
 #  become: false
 #- name: Read-write git checkout from github
-#  ansible.builtin.shell: cd /home/ec2-user/05-lab ; git clone  git@server.example.com:root/rh1-ansible-eda-vars-zabbix.git
+#  ansible.builtin.shell: cd /home/ec2-user/05-lab ; git clone  git@server.example.com:root/redhat-ansible-eda-vars-zabbix.git
 #  become: false
 
 # - name: Read-write git checkout from github
@@ -286,16 +286,16 @@
 
 # - name: Read-write git checkout from github
 #   ansible.builtin.git:
-#     repo: git@server.example.com:root/rh1-aap-extra-vars-eda.git
-#     dest: /home/ec2-user/03-lab/rh1-aap-extra-vars-eda
+#     repo: git@server.example.com:root/redhat-aap-extra-vars-eda.git
+#     dest: /home/ec2-user/03-lab/redhat-aap-extra-vars-eda
 #     ssh_opts: "-o StrictHostKeyChecking=no"
 #     key_file: /home/ec2-user/.ssh/id_rsa
 #   become: false
 
 # - name: Read-write git checkout from github
 #   ansible.builtin.git:
-#     repo: git@server.example.com:root/rh1-ansible-eda-vars-zabbix.git
-#     dest: /home/ec2-user/05-lab/rh1-ansible-eda-vars-zabbix
+#     repo: git@server.example.com:root/redhat-ansible-eda-vars-zabbix.git
+#     dest: /home/ec2-user/05-lab/redhat-ansible-eda-vars-zabbix
 #     ssh_opts: "-o StrictHostKeyChecking=no"
 #     key_file: /home/ec2-user/.ssh/id_rsa
 #   become: false
@@ -401,7 +401,7 @@
 
 - name: Remove file (delete file)
   ansible.builtin.file:
-    path: /home/ec2-user/03-lab/rh1-eda-example.tar.xz
+    path: /home/ec2-user/03-lab/redhat-eda-example.tar.xz
     state: absent
 
 ######################
