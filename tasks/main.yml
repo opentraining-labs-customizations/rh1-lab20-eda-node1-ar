@@ -234,7 +234,7 @@
 - name: Extract redhat-eda-example.tar.xz into /home/ec2-user/03-lab/
   ansible.builtin.unarchive:
     src: /home/ec2-user/03-lab/redhat-eda-example.tar.xz
-    dest: /home/ec2-user/03-lab/redhat-eda-example
+    dest: /home/ec2-user/03-lab/
     remote_src: yes
 # remocing this tasks as the cu or RH employee should use their own creds
 #- name: Create file with registry credentials
