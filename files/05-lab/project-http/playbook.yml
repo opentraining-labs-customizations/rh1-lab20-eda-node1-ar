@@ -5,11 +5,11 @@
     - name: Add hosts
       ansible.builtin.add_host:
         name: "{{ hosts_update }}"
-        groups: rh1
+        groups: redhat
       with_items: '{{ hosts_update.split() }}'
 
-- name: RH1
-  hosts: rh1
+- name: Red Hat
+  hosts: redhat
   become: true
   remote_user: root
   tasks:
